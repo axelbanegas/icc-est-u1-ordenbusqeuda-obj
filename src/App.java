@@ -20,6 +20,7 @@ public class App {
 
         PersonaController controller = new PersonaController();
         ViewConsole view = new ViewConsole();
+        Persona pA = new Persona();
 
         controller.sortByDireccionCodigo(personas);
         view.printArray(personas);
@@ -27,7 +28,9 @@ public class App {
         controller.sortByDireccionCodigo(personas);
         view.printArray(personas);
 
-        Persona found = controller.findByCodigo(personas, 89);
-        System.out.println("Encontrado: " + (found != null ? found.getNombre() : "No encontrado"));
+        Persona pB = controller.findPersonByCodigoDireccion(personas, 56);
+        (pB != null) ? System.out.println("Persona encontrada: " + pA.getNombre()) : System.out.println("No se encontró la persona con el código 56");
+
+        
     }
 }
